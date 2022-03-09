@@ -42,7 +42,7 @@ def parse_jj_novel(req_url,savepath):
             pic.write(img)
 
             
-def search_jj_novel(book_keywork,author_keywork,search_pages):
+def search_jj_novel(book_keywork,author_keywork,search_pages,savepath):
     encode_keywork = urllib.parse.quote(book_keywork.encode('gbk'))
     find_dict={}
     for page in range(1,search_pages):
@@ -69,4 +69,4 @@ def search_jj_novel(book_keywork,author_keywork,search_pages):
         print("找到%d条记录："%len(find_dict))
         for i in find_dict.keys():
             print("  书名：%s，作者：%s，小说地址：%s"%(i.split("-")[0],i.split("-")[1],find_dict[i]))
-            parse_jj_novel(find_dict[i],".")
+            parse_jj_novel(find_dict[i],savepath)
