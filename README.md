@@ -21,9 +21,9 @@
 # 实例
  # 小说界面
 ![image](https://user-images.githubusercontent.com/57182325/157384580-35822da5-236f-4510-bbcb-22673ae4d3df.png)
+ # 运行代码
+ - 运行目录结构：![image](https://user-images.githubusercontent.com/57182325/157384781-1db70aad-a6de-4fcf-a658-4b5d7cfb3543.png)
+ - 调用函数：![image](https://user-images.githubusercontent.com/57182325/157384794-fe5da6cf-cdec-44b3-9e9f-62c9b4465fc2.png)
  # 爬取结果
-![image](https://user-images.githubusercontent.com/57182325/157384814-4db4148d-5d85-4909-b4b4-50d3bf1f1c39.png)
-![image](https://user-images.githubusercontent.com/57182325/157384781-1db70aad-a6de-4fcf-a658-4b5d7cfb3543.png)
-![image](https://user-images.githubusercontent.com/57182325/157384794-fe5da6cf-cdec-44b3-9e9f-62c9b4465fc2.png)
-![image](https://user-images.githubusercontent.com/57182325/157384830-d11d09cb-6376-4ef6-86d3-248641c99cc7.png)
-![image](https://user-images.githubusercontent.com/57182325/157384846-6f3b14cc-da91-4a0d-8210-b3cfb08ed51b.png)
+ - 小说：![image](https://user-images.githubusercontent.com/57182325/157384830-d11d09cb-6376-4ef6-86d3-248641c99cc7.png)
+ - 封面：![image](https://user-images.githubusercontent.com/57182325/157384846-6f3b14cc-da91-4a0d-8210-b3cfb08ed51b.png)
