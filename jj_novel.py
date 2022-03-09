@@ -13,7 +13,7 @@ def parse_jj_novel(req_url,savepath):
     apireq = 'https://app.jjwxc.net/androidapi/novelbasicinfo?novelId=' + nid
     apires = requests.get(apireq)
     apicont = json.loads(apires.text)
-    savepath=os.path.join(savepath,apicont["authorName"])
+    savepath=os.path.join(savepath,apicont["authorName"]).replace("*","x")
     os.makedirs(savepath,exist_ok=True)
     cover = apicont["novelCover"]
     TOC=""
@@ -32,14 +32,21 @@ def parse_jj_novel(req_url,savepath):
         if (j != ""):
             TOC+="\t"+j+"\n"
     TOC+="一句话简介："+apicont['novelIntroShort']+"\n"
-    fo=open("%s/%s - %s - 简介.txt"%(savepath,apicont["novelName"],apicont["authorName"]),'w',encoding='utf-8')
+    TOC_file="%s/%s - %s - 简介.txt"%(savepath,apicont["novelName"],apicont["authorName"])
+    TOC_file=TOC_file.replace("*","x")
+    fo=open(TOC_file,'w',encoding='utf-8')
     fo.write(TOC)
     fo.close()
-    if cover != '':
-        pres = requests.get(cover)
-        img = pres.content
-        with open("%s/%s - %s - 封面.jpg"%(savepath,apicont["novelName"],apicont["authorName"]), 'wb') as pic:
-            pic.write(img)
+    try:
+        if cover != '':
+            pres = requests.get(cover)
+            img = pres.content
+            img_file="%s/%s - %s - 封面.jpg"%(savepath,apicont["novelName"],apicont["authorName"])
+            img_file=img_file.replace("*","x")
+            with open(img_file, 'wb') as pic:
+                pic.write(img)
+    except:
+        print("保存不了图片，自行下载：%s"%(cover))
 
             
 def search_jj_novel(book_keywork,author_keywork,search_pages,savepath):
